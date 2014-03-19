@@ -35,6 +35,7 @@ loop(Node, MyMessages, Workers) ->
                     Node ! {ack, write, N, Message},
                     loop(Node, [{ack, write, N,Message}|MyMessages],
                          [Worker|Workers]);
+
                 no ->
                     % I receive a write request and I didn't write it ->
                     % - I try to write it.
@@ -50,6 +51,7 @@ loop(Node, MyMessages, Workers) ->
                             Node ! {ack, write, N, Message},
                             loop(Node, [{ack, write, N,Message}|MyMessages],
                                 Workers);
+
                         _ -> %{no, writer} ->
                             % I don't have a writer ->
                             % - I pass along the request.
@@ -64,6 +66,7 @@ loop(Node, MyMessages, Workers) ->
                     % - End of the road for this message.
                     io:format("~w> I received a {ack, write, ...}, I *DID* write it.~n", [self()]),
                     loop(Node, MyMessages, Workers);
+
                 no ->
                     % I receive a ack request and I didn't write it ->
                     % - I pass along the request.
@@ -80,13 +83,17 @@ loop(Node, MyMessages, Workers) ->
                     Req = {ack, write, random(), M},
                     Node ! Req,
                     loop(Node, [Req|MyMessages], Workers);
+
                 _ -> %{no, writer} ->
                     % I don't have a writer ->
                     % - I pass along the request.
                     Req = {request, write, random(), M},
                     Node ! Req,
                     loop(Node, [Req|MyMessages], Workers)
-            end
+            end;
+        {get, friend, node, Pid} ->
+            Pid ! Node,
+            loop(Node, MyMessages, Workers)
     end.
 
 
