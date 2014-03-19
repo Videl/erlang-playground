@@ -1,0 +1,39 @@
+Eshell V5.10.4  (abort with ^G)
+1> {ok,node}
+2> {ok,filewriter}
+3> {ok,fileopener}
+4> <0.51.0>
+5> <0.53.0>> I received a {request, write, ...}, I did *NOT* write it.
+{write,request,"Coucou ! Est-ce que ça va s'écrire ?"}
+<0.54.0>> I received a {request, write, ...}, I did *NOT* write it.
+<0.55.0>> I received a {request, write, ...}, I did *NOT* write it.
+6> <0.56.0>> I received a {request, write, ...}, I did *NOT* write it.
+6> <0.57.0>> I received a {request, write, ...}, I did *NOT* write it.
+6> <0.58.0>> I received a {request, write, ...}, I did *NOT* write it.
+6> <0.59.0>> I received a {request, write, ...}, I did *NOT* write it.
+6> <0.60.0>> I received a {request, write, ...}, I did *NOT* write it.
+6> <0.61.0>> I received a {request, write, ...}, I did *NOT* write it.
+6> <0.62.0>> I received a {request, write, ...}, I did *NOT* write it.
+6> <0.51.0>> I received a {request, write, ...}, I *DID* write it.
+6> <0.53.0>> I received a {ack, write, ...}, I did *NOT* write it.
+6> <0.54.0>> I received a {ack, write, ...}, I did *NOT* write it.
+6> <0.55.0>> I received a {ack, write, ...}, I did *NOT* write it.
+6> <0.56.0>> I received a {ack, write, ...}, I did *NOT* write it.
+6> <0.57.0>> I received a {ack, write, ...}, I did *NOT* write it.
+6> <0.58.0>> I received a {ack, write, ...}, I did *NOT* write it.
+6> <0.59.0>> I received a {ack, write, ...}, I did *NOT* write it.
+6> <0.60.0>> I received a {ack, write, ...}, I did *NOT* write it.
+6> <0.61.0>> I received a {ack, write, ...}, I did *NOT* write it.
+6> <0.62.0>> I received a {ack, write, ...}, I did *NOT* write it.
+6> <0.51.0>> I received a {ack, write, ...}, I *DID* write it.
+6> <0.66.0>
+7> <0.67.0>> I received a {request, write, ...}, I did *NOT* write it.
+{write,request,"Je fais un test."}
+<0.68.0>> I received a {request, write, ...}, I did *NOT* write it.
+<0.69.0>> I received a {request, write, ...}, I did *NOT* write it.
+8> <0.66.0>> I received a {request, write, ...}, I *DID* write it.
+8> <0.67.0>> I received a {ack, write, ...}, I did *NOT* write it.
+8> <0.68.0>> I received a {ack, write, ...}, I did *NOT* write it.
+8> <0.69.0>> I received a {ack, write, ...}, I did *NOT* write it.
+8> <0.66.0>> I received a {ack, write, ...}, I *DID* write it.
+8> 
